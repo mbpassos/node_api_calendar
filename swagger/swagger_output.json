@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Calendar API",
-    "description": "Simple Calendar API"
+    "description": "Simple Calendar API that could be used for all sorts of applications that require date and time for appointments and other events that needs schedulling."
   },
   "host": "localhost:8001",
   "basePath": "/",
@@ -17,17 +17,20 @@
     "/api/calendar": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Gets all the calendars documents from the API.",
         "parameters": [],
         "responses": {
           "400": {
-            "description": "Bad Request"
+            "description": "Bad request."
+          },
+          "200": {
+            "description": "Ok."
           }
         }
       },
       "post": {
         "tags": [],
-        "description": "",
+        "description": "Creates and sends new calendar document with parameters in the body.",
         "parameters": [
           {
             "name": "obj",
@@ -37,11 +40,11 @@
               "properties": {
                 "date": {
                   "type": "string",
-                  "example": "any"
+                  "example": "22/04/2021"
                 },
                 "time": {
                   "type": "string",
-                  "example": "any"
+                  "example": "20:00"
                 }
               }
             }
@@ -60,7 +63,7 @@
     "/api/calendar/{_id}": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Gets an specific calendar document through the id.",
         "parameters": [
           {
             "name": "_id",
@@ -72,12 +75,15 @@
         "responses": {
           "400": {
             "description": "Bad Request"
+          },
+          "200": {
+            "description": "Ok."
           }
         }
       },
       "put": {
         "tags": [],
-        "description": "",
+        "description": "Updates an specific calendar document trought the id and the data sent from the body.",
         "parameters": [
           {
             "name": "_id",
@@ -89,12 +95,15 @@
         "responses": {
           "400": {
             "description": "Bad Request"
+          },
+          "200": {
+            "description": "Ok."
           }
         }
       },
       "delete": {
         "tags": [],
-        "description": "",
+        "description": "Deletes an specific calendar document through the id.",
         "parameters": [
           {
             "name": "_id",
@@ -106,6 +115,9 @@
         "responses": {
           "400": {
             "description": "Bad Request"
+          },
+          "200": {
+            "description": "Ok."
           }
         }
       }
